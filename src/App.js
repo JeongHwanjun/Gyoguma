@@ -11,8 +11,9 @@ import MyPage from "./pages/MyPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import ProductListPage from "./pages/ProductListPage";
 import AuthCallback from './pages/AuthCallback';
-import ChatRoomList from './pages/ChatRoomList';
-import ChatRoom from './pages/ChatRoom';
+//import ChatRoomList from './pages/ChatRoomList';
+//import ChatRoom from './pages/ChatRoom';
+import AddInfoPage from "./pages/AddInfoPage";
 
 function App() {
   return (
@@ -24,7 +25,9 @@ function App() {
 
           {/* 인증 관련 */}
           <Route path="/auth" element={<AuthPage />} />
-          <Route path="/oauth2/callback/google" element={<AuthCallback />} />
+          <Route path="/users/addInfo" element={<AddInfoPage />} />
+          <Route path="/users/addInfo" element={<AddInfoPage />} />
+
 
           {/* 카테고리 및 상품 관련 */}
           <Route path="/category" element={<CategoryPage />} />
@@ -34,9 +37,10 @@ function App() {
           {/* 채팅 관련 라우트들을 계층적으로 구성 */}
           <Route path="/chat" element={<ChatMainPage />} />
           <Route path="/chat/:roomId" element={<ChatPage />} />
+          {/*
           <Route path="/chat/user/:userId" element={<ChatRoomList />} />
           <Route path="/chat/:roomId" element={<ChatRoom />} />
-
+          */}
           {/* 마이페이지 */}
           <Route path="/mypage" element={<MyPage />} />
         </Route>

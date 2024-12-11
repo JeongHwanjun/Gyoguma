@@ -53,4 +53,26 @@ export const API = {
     create: (memberId, data) =>
       axiosInstance.post(`/reviews/${memberId}`, data),
   },
+
+  chat: {
+    create: (buyerId, sellerId, productId) =>
+      axiosInstance.post("/chat", {
+        buyer: buyerId,
+        seller: sellerId,
+        product: productId
+      }),
+
+    enter: (roomId, userId) =>
+      axiosInstance.post(`/chat/${roomId}/${userId}`),
+
+    getUserRooms: (userId) =>
+      axiosInstance.get(`/chat/user/${userId}`),
+
+    getMessages: (roomId) =>
+      axiosInstance.get(`/chat/${roomId}`),
+
+    delete: (roomId) =>
+      axiosInstance.delete(`/chat/${roomId}`),
+  }
+
 };
